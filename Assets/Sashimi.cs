@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Sashimi : MonoBehaviour {
 
-  public float speed;
+  //public float speed;
+  public float speed = 2;
+  float speedUpRate = 1f;
   public string Tag;
   public string CheckerTag;
   public GameObject Prefab;
@@ -13,10 +15,12 @@ public class Sashimi : MonoBehaviour {
   // Use this for initialization
   void Start () {
     Destroy(gameObject, 10f);
-	}
+    speed = speed * speedUpRate * Time.realtimeSinceStartup;
+  }
 	
 	// Update is called once per frame
 	void Update () {
+    //speed = speed * speedUpRate * Time.realtimeSinceStartup;
     transform.Translate(speed * Time.deltaTime, 0, 0);
     //var vector3 = new Vector3 (-5, 0, 0);
     //rb.velocity = vector3;
