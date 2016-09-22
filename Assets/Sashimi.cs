@@ -5,6 +5,7 @@ public class Sashimi : MonoBehaviour {
 
   public float speed;
   public string Tag;
+  public string CheckerTag;
   public GameObject Prefab;
   //public Rigidbody rb;
   // Use this for initialization
@@ -27,6 +28,10 @@ public class Sashimi : MonoBehaviour {
       Vector3 position = new Vector3(0, 0, -8);
       Quaternion rotation = Quaternion.Euler(0, 0, 0);
       Instantiate(Prefab, position, rotation);
+    }
+    else if(order.gameObject.tag == CheckerTag)
+    {
+
     }
   }
 }
