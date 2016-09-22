@@ -24,7 +24,9 @@ public class Sashimi : MonoBehaviour {
     if (order.gameObject.tag == Tag)
     {
       Destroy(gameObject);
-      Instantiate(Prefab, transform.position, transform.rotation);
+      Vector3 position = new Vector3(0, 0, -8);
+      Quaternion rotation = Quaternion.Euler(0, 0, 0);
+      Instantiate(Prefab, position, rotation);
     }
   }
 }
