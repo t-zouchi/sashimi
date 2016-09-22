@@ -3,8 +3,7 @@ using System.Collections;
 
 public class Flower : MonoBehaviour {
 
-  public float speed;
-  public string activeTag;
+  public string Tag;
 
 	// Use this for initialization
 	void Start () {
@@ -16,8 +15,12 @@ public class Flower : MonoBehaviour {
 	
 	}
 
-  void OnColligionEnter(Collision collision)
+  void OnTriggerEnter(Collider order)
   {
-    Debug.Log("さわさわ");
+    if (order.gameObject.tag == Tag)
+    {
+      Destroy(gameObject);
+    }
   }
+
 }
