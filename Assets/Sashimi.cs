@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
+
 
 public class Sashimi : MonoBehaviour {
 
@@ -31,7 +33,7 @@ public class Sashimi : MonoBehaviour {
     }
     else if(order.gameObject.tag == CheckerTag)
     {
-
+      SceneManager.LoadScene("title");
     }
   }
 }
