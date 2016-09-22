@@ -22,6 +22,6 @@ public class FlowerSpawner : MonoBehaviour {
       transform.position,
       Quaternion.identity
       );
-    Destroy(flower, 3);
+    Destroy(flower, 1);
   }
 }
