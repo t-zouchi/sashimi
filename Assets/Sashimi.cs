@@ -13,23 +13,14 @@ public class Sashimi : MonoBehaviour {
   public GameObject Conrtollor;
   SpeedControllor speedControllor;
 
-  //SpeedControllor spc  = null;
-  // Use this for initialization
   void Start () {
     speedControllor = Conrtollor.GetComponent<SpeedControllor>();
-    speed = speedControllor.getSpeed();
-    
+    speed = speedControllor.getSpeed();    
     Destroy(gameObject, 10f);
-    //speed = speed * speedUpRate * Time.realtimeSinceStartup;
-    
   }
 	
-	// Update is called once per frame
 	void Update () {
-
     transform.Translate(speed * Time.deltaTime, 0, 0);
-    //var vector3 = new Vector3 (-5, 0, 0);
-    //rb.velocity = vector3;
 	}
 
   void OnTriggerEnter(Collider order)
@@ -49,5 +40,3 @@ public class Sashimi : MonoBehaviour {
     }
   }
 }
-
-
