@@ -4,6 +4,8 @@ using System.Collections;
 public class Flower : MonoBehaviour {
 
   public string Tag;
+  public float speed = 0;
+  bool moveflg = false;
 
 	// Use this for initialization
 	void Start () {
@@ -12,6 +14,10 @@ public class Flower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+    if (moveflg)
+    {
+      transform.Translate(speed * Time.deltaTime, 0, 0);
+    }
 	
 	}
 
@@ -20,7 +26,13 @@ public class Flower : MonoBehaviour {
     if (order.gameObject.tag == Tag)
     {
       Destroy(gameObject);
+      moveflg = true;
     }
+  }
+
+  void OnCollisionEnter(Collision collision)
+  {
+    transform.Translate(speed * Time.deltaTime, 0, 0);
   }
 
 }
