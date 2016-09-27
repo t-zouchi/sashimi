@@ -4,10 +4,14 @@ using System.Collections;
 public class SpeedControllor : MonoBehaviour {
 
   public float speed = 2;
-	
+  int count = 0;
   public void speedUp()
   {
-    speed = speed * 1.1f;
+    if(count%4 == 0)
+    {
+      speed = speed * 1.1f;
+    }
+    count++;
   }
 
   public float getSpeed()
