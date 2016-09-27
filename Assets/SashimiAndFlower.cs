@@ -2,14 +2,20 @@
 using System.Collections;
 
 public class SashimiAndFlower : MonoBehaviour {
-  public int speed;
-	// Use this for initialization
-	void Start () {
+  //public float speed;
+  float speed = 0;
+  public string CheckerTag;
+  public GameObject Conrtollor;
+  SpeedControllor speedControllor;
+
+  void Start () {
+    speedControllor = Conrtollor.GetComponent<SpeedControllor>();
+    speed = (-1) * speedControllor.getSpeed();
     Destroy(gameObject, 7);
 	}
 	
-	// Update is called once per frame
 	void Update () {
     transform.Translate(speed * Time.deltaTime, 0, 0);
   }
+
 }
