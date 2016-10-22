@@ -2,7 +2,6 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-
 public class Sashimi : MonoBehaviour {
 
   //public float speed;
@@ -32,7 +31,6 @@ public class Sashimi : MonoBehaviour {
       //事前に今あるCanvasを削除する
       if(GameObject.Find("Canvas(Clone)") != null)
       {
-        Debug.Log("Debug " + GameObject.Find("Canvas(Clone)").name);
         Destroy(GameObject.Find("Canvas(Clone)"));
       }
      pointCount.pointUp();
