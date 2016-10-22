@@ -12,9 +12,11 @@ public class Sashimi : MonoBehaviour {
   public GameObject Prefab;
   public GameObject Conrtollor;
   SpeedControllor speedControllor;
+  PointCount pointCount;
 
   void Start () {
     speedControllor = Conrtollor.GetComponent<SpeedControllor>();
+    pointCount = Conrtollor.GetComponent<PointCount>();
     speed = speedControllor.getSpeed();    
     Destroy(gameObject, 10f);
   }
@@ -27,11 +29,17 @@ public class Sashimi : MonoBehaviour {
   {
     if (order.gameObject.tag == Tag)
     {
-      Destroy(gameObject);
+      //事前に今あるCanvasを削除する
+      if(GameObject.Find("Canvas(Clone)") != null)
+      {
+        Debug.Log("Debug " + GameObject.Find("Canvas(Clone)").name);
+        Destroy(GameObject.Find("Canvas(Clone)"));
+      }
+     pointCount.pointUp();
+     Destroy(gameObject);
       Vector3 position = new Vector3(0, 0, -8);
       Quaternion rotation = Quaternion.Euler(0, 0, 0);
       Instantiate(Prefab, position, rotation);
-      speedControllor.speedUp();
     }
     else if(order.gameObject.tag == CheckerTag)
     {

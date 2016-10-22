@@ -23,5 +23,4 @@ public class SashimiSpawner : MonoBehaviour {
       yield return new WaitForSeconds(interval);
     }
   }
-		
 }

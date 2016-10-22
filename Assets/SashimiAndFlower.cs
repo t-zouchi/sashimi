@@ -17,5 +17,4 @@ public class SashimiAndFlower : MonoBehaviour {
 	void Update () {
     transform.Translate(speed * Time.deltaTime, 0, 0);
   }
-
 }
