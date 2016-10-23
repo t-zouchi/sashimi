@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class Sashimi : MonoBehaviour {
 
-  //public float speed;
   float speed = 0;
   public string Tag;
   public string CheckerTag;
@@ -34,6 +33,7 @@ public class Sashimi : MonoBehaviour {
         Destroy(GameObject.Find("Canvas(Clone)"));
       }
      pointCount.pointUp();
+     speedControllor.speedUp();
      Destroy(gameObject);
       Vector3 position = new Vector3(0, 0, -8);
       Quaternion rotation = Quaternion.Euler(0, 0, 0);
@@ -42,7 +42,6 @@ public class Sashimi : MonoBehaviour {
     else if(order.gameObject.tag == CheckerTag)
     {
       speedControllor.speed = 2;
-      //SceneManager.LoadScene("title");
       SceneManager.LoadScene("Gameend");
     }
   }
