@@ -8,4 +8,15 @@ public class LoadGame : MonoBehaviour {
   {
     SceneManager.LoadScene("sashimi");
   }
+
+  public void MoveTitle()
+  {
+    SceneManager.LoadScene("title");
+  }
+
+  public void TweetButton()
+  {
+    string message = "test #nikonamakudou";
+    Application.OpenURL("http://twitter.com/intent/tweet?text=" + WWW.EscapeURL(message));
+  }
 }

@@ -42,7 +42,8 @@ public class Sashimi : MonoBehaviour {
     else if(order.gameObject.tag == CheckerTag)
     {
       speedControllor.speed = 2;
-      SceneManager.LoadScene("title");
+      //SceneManager.LoadScene("title");
+      SceneManager.LoadScene("Gameend");
     }
   }
 }
