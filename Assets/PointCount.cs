@@ -10,12 +10,14 @@ public class PointCount : MonoBehaviour {
   Canvas currentCanvas;
   string template = "Score :";
   public static int gamePoint = 0;
+  public static bool magroFlg = false;
 
   // Use this for initialization
   void Start () {
     point = 0;
     gamePoint = 0;
     currentCanvas = Instantiate(canvas);
+    magroFlg = false;
     foreach (Transform child in currentCanvas.transform)
     {
       if(child.name == "Score")
@@ -46,5 +48,10 @@ public class PointCount : MonoBehaviour {
       }
     }
     gamePoint = point;
+  }
+
+  public void magroHit()
+  {
+    magroFlg = true;
   }
 }
