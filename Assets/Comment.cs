@@ -8,7 +8,15 @@ public class Comment : MonoBehaviour {
 	void Start () {
     int point = PointCount.getPoint();
     int salary = 10 * point;
-    string message = "刺身に" + point.ToString() + "個たんぽぽを乗せました\n" + "給料は" + salary.ToString() + "円です。";
+    string message = "";
+    if (!PointCount.magroFlg)
+    {
+      message = "刺身に" + point.ToString() + "個たんぽぽを乗せました\n" + "給料は" + salary.ToString() + "円です。";
+    }
+    else
+    {
+      message = "貴様!! マグロに触っただろ!!\n首じゃぁ!!!!";
+    }
     comment.text = message;
   }
 }

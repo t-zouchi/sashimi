@@ -9,7 +9,6 @@ public class Flower : MonoBehaviour {
   public float speed = 0;
   bool moveflg = false;
   public GameObject Conrtollor;
-  public GameObject Canbas;
   PointCount pointCount;
   public Text Score;
 
@@ -34,6 +33,16 @@ public class Flower : MonoBehaviour {
   {
     if(collision.gameObject.tag == "conveyor")
     {
+      if (!LoadGame.hanafubikiFlg)
+      {
+        SceneManager.LoadScene("Gameend");
+      }
+    }
+
+    if (collision.gameObject.tag == "maguro")
+    {
+      pointCount = Conrtollor.GetComponent<PointCount>();
+      pointCount.magroHit();
       SceneManager.LoadScene("Gameend");
     }
   }

@@ -16,7 +16,6 @@ public class SpeedControllor : MonoBehaviour {
 
   public void speedUp()
   {
-    Debug.Log(level);
     if (level <= limit)
     {
       if (count % level == 0)
