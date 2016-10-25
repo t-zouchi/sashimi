@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Flower : MonoBehaviour {
@@ -31,6 +32,9 @@ public class Flower : MonoBehaviour {
 
   void OnCollisionEnter(Collision collision)
   {
-    transform.Translate(speed * Time.deltaTime, 0, 0);
+    if(collision.gameObject.tag == "conveyor")
+    {
+      SceneManager.LoadScene("Gameend");
+    }
   }
 }

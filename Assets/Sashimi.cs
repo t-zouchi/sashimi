@@ -28,13 +28,13 @@ public class Sashimi : MonoBehaviour {
     if (order.gameObject.tag == Tag)
     {
       //事前に今あるCanvasを削除する
-      if(GameObject.Find("Canvas(Clone)") != null)
+      if (GameObject.Find("Canvas(Clone)") != null)
       {
         Destroy(GameObject.Find("Canvas(Clone)"));
       }
-     pointCount.pointUp();
-     speedControllor.speedUp();
-     Destroy(gameObject);
+      pointCount.pointUp();
+      speedControllor.speedUp();
+      Destroy(gameObject);
       Vector3 position = new Vector3(0, 0, -8);
       Quaternion rotation = Quaternion.Euler(0, 0, 0);
       Instantiate(Prefab, position, rotation);
